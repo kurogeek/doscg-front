@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/logo.png">
     <p>
         <router-link to="/test">test</router-link>
         <router-link to="/foo">foo</router-link>
@@ -13,13 +12,11 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     Footer,
   },
   
@@ -33,6 +30,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
 }
 </style>
