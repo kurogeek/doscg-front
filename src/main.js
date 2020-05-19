@@ -3,8 +3,16 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 
 Vue.config.productionTip = false
+Vue.use(VueRouter)
 
-const routes = []
+const Foo = { template: '<div>foo</div>' }
+const Bar = { template: '<div>bar</div>' }
+
+const routes = [
+    { path: '/foo', component: Foo },
+    { path: '/bar', component: Bar },
+    { path: '/test', component: { template: '<div>Hello test</div>' } }
+]
 
 const router = new VueRouter({
     routes,
