@@ -1,23 +1,14 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <p>
-        <router-link to="/test">test</router-link>
-        <router-link to="/foo">foo</router-link>
-        <router-link to="/bar">bar</router-link>
-    </p>
-    <router-view />
-    <Footer />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
 <script>
-import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    Footer,
   },
 }
 </script>
@@ -33,5 +24,8 @@ export default {
 }
 body {
     margin: 0px;
+}
+img{
+  width: 400px;
 }
 </style>
