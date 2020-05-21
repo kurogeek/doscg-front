@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <p>Power By Kurogeek 2020</p>
+    <span>Power By Kurogeek 2020</span>
   </div>
 </template>
 
@@ -22,6 +22,7 @@ export default {
 }
 p {
     color: black;
+    padding: 0;
 }
 
 </style>

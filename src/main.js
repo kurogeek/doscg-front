@@ -1,17 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueRouter from 'vue-router'
+import router from "./router";
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.config.productionTip = false
-Vue.use(VueRouter)
 
-const routes = [
-    { path: '/test', name: 'test', component: { template: '<div>Hello test</div>' } }
-]
-
-const router = new VueRouter({
-    routes,
-})
+// Install BootstrapVue
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
 
 new Vue({
     router,
