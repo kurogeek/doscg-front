@@ -3,7 +3,7 @@ import Doscg from "./views/doscg/Doscg";
 
 import Xyz from "./views/xyz/Xyz";
 import BC from "./views/bc/Bc";
-import Map from "./views/map/Map";
+import Gmap from "./views/map/Map";
 
 export default [
     {
@@ -26,7 +26,7 @@ export default [
             }, {
                 path: '/map',
                 name: 'map',
-                component: Map,
+                component: Gmap,
             },
         ],
     },
