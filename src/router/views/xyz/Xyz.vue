@@ -1,7 +1,8 @@
 <template>
   <div class="xyz">
       <h2>Question: X, Y, 5, 9, 15, 23, Z  - Please finding X, Y, Z value</h2>
-      <h3 v-if="answer">Answer: X={{answer.x}}, Y={{answer.y}} and Z={{answer.z}}</h3>
+      <hr>
+      <h3 v-if="answer">Answer: X = {{answer.x}}, Y = {{answer.y}} and Z = {{answer.z}}</h3>
   </div>
 </template>
 
@@ -33,7 +34,7 @@ export default {
 .xyz {
   float: left;
 }
-h3 {
-  float: left;
+h2, h3 {
+  text-align: left;
 }
 </style>
