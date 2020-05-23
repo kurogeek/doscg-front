@@ -41,7 +41,7 @@ a {
   color: #42b983;
 }
 .content {
-    min-height: 300px;
+    min-height: 550px;
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 15%;
