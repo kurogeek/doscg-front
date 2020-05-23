@@ -1,7 +1,6 @@
 <script>
-import { POINT_MARKER_ICON_CONFIG } from "@/constants/mapSettings";
 export default {
-    props: {
+  props: {
     google: {
       type: Object,
       required: true
@@ -13,6 +12,10 @@ export default {
     marker: {
       type: Object,
       required: true
+    },
+    label: {
+      type: String,
+      required: true
     }
   },
 
@@ -21,7 +24,7 @@ export default {
       position: this.marker.position,
       marker: this.marker,
       map: this.map,
-      icon: POINT_MARKER_ICON_CONFIG,
+      label: this.label,
     })
   },
 

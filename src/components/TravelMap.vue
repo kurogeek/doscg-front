@@ -4,6 +4,8 @@
     apiKey="AIzaSyDfCyo5qCiqYEVo-dyMtll3_7ALQFEyKbg"
   >
     <template slot-scope="{ google, map }">
+      {{markers}}
+      {{lines}}
         <GoogleMapMarker
             v-for="marker in markers"
             :key="marker.id"
@@ -35,6 +37,16 @@ export default {
     GoogleMapMarker,
     GoogleMapLine,
   },
+  props: {
+    markers: {
+      type: Array,
+      required: true,
+    },
+    lines: {
+      type: Array,
+      required: true,
+    }
+  },
   data() {
       return {
           markers: [{ id: 'a', position: { lat: 3, lng: 101 } },
@@ -53,7 +65,10 @@ export default {
       }
     },
     mapCenter() {
+      if (this.markers.lenght > 0) {
         return this.markers[0].position
+      }
+        return null
     }
   },
 }

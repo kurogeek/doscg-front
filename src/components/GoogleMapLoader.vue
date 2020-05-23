@@ -17,7 +17,8 @@ export default {
   props: {
     mapConfig: Object,
     apiKey: String,
-  },
+    center: Object,
+},
 
   data() {
     return {
@@ -32,6 +33,10 @@ export default {
     })
     this.google = googleMapApi
     this.initializeMap()
+  },
+
+  updated() {
+    this.map.setCenter({lat: this.center.lat, lng: this.center.lng})
   },
 
   methods: {
