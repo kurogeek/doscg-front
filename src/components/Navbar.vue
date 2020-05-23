@@ -11,6 +11,7 @@
               <b-nav-item to="/doscg">YXZ</b-nav-item>
               <b-nav-item to="/bc">BC</b-nav-item>
               <b-nav-item to="/map">Map</b-nav-item>
+              <b-nav-item href="/resume.pdf" target="blank">Resume</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
 
