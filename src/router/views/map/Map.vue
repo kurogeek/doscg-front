@@ -5,7 +5,7 @@
       class="map"
       :mapConfig="mapConfig"
       v-bind:center="center"
-      apiKey="AIzaSyDfCyo5qCiqYEVo-dyMtll3_7ALQFEyKbg"
+      :apiKey="apiKey"
     >
       <template slot-scope="{ google, map }">
         <GoogleMapMarker
@@ -35,6 +35,9 @@ import GoogleMapMarker from "@/components/GoogleMapMarker";
 import GoogleMapLine from "@/components/GoogleMapLine";
 import { mapSettings } from "@/constants/mapSettings";
 
+const apiHost = process.env.VUE_APP_API_HOST;
+const googleKey = process.env.VUE_APP_GOOGLE_KEY
+
 export default {
   name: "Map",
   components: {
@@ -50,13 +53,14 @@ export default {
         lng: 1
       },
       markers: [],
-      lines: []
+      lines: [],
+      apiKey: googleKey,
     };
   },
   mounted() {
-    Axios.get(
-      "https://doscg-kurogeek.herokuapp.com/findBestWayFromSCGToCentrallWorld"
-    ).then(res => {
+    const url = apiHost + "/findBestWayFromSCGToCentrallWorld";
+
+    Axios.get(url).then(res => {
       let answer = res.data.data.attributes;
       let originLocation = answer.originLocation;
       let destinationLocation = answer.destinationLocation;

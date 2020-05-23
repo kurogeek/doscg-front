@@ -9,6 +9,8 @@
 <script>
 import Axios from "axios";
 
+const apiHost = process.env.VUE_APP_API_HOST
+
 export default {
   name: 'BC',
   data() {
@@ -17,8 +19,9 @@ export default {
     }
   },
   mounted() {
+    const url = apiHost + "/find-bc"
       Axios.
-      get("https://doscg-kurogeek.herokuapp.com/find-bc").
+      get(url).
       then(res => {
         if (res.data.data != null ){
           this.answer = res.data.data.attributes

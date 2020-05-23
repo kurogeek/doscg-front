@@ -1,32 +1,36 @@
 <template>
   <div class="xyz">
-      <h2>Question: X, Y, 5, 9, 15, 23, Z  - Please finding X, Y, Z value</h2>
-      <hr>
-      <h3 v-if="answer">Answer: X = {{answer.x}}, Y = {{answer.y}} and Z = {{answer.z}}</h3>
+    <h2>Question: X, Y, 5, 9, 15, 23, Z - Please finding X, Y, Z value</h2>
+    <hr />
+    <h3 v-if="answer">Answer: X = {{answer.x}}, Y = {{answer.y}} and Z = {{answer.z}}</h3>
   </div>
 </template>
 
 <script>
+import Axios from "axios";
 
-import Axios from 'axios';
+const apiHost = process.env.VUE_APP_API_HOST;
 
 export default {
-  name: 'XYZ',
+  name: "XYZ",
   data() {
     return {
       answer: null
-    }
+    };
   },
   mounted() {
-    Axios.
-      get("https://doscg-kurogeek.herokuapp.com/find-xyz").
-      then(res => {
-        if (res.data.data != null ){
-          this.answer = res.data.data.attributes
+    const url = apiHost + "/find-xyz"
+    Axios.get(url)
+      .then(res => {
+        if (res.data.data != null) {
+          this.answer = res.data.data.attributes;
         }
-      }).catch(err => {console.log(err)})
-  },
-}
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -34,7 +38,8 @@ export default {
 .xyz {
   float: left;
 }
-h2, h3 {
+h2,
+h3 {
   text-align: left;
 }
 </style>
