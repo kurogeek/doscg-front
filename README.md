@@ -1,5 +1,11 @@
 # doscg-front
 
+### Set up file .env
+```
+VUE_APP_GOOGLE_KEY=your_key
+VUE_APP_API_HOST=https://doscg-kurogeek.herokuapp.com
+```
+
 ## Project setup
 ```
 yarn install
